@@ -1,0 +1,274 @@
+body {
+    background: linear-gradient(to right, #56CCF2, #2F80ED);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: Arial, sans-serif;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  #scores {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  #scores p {
+    margin: 5px;
+  }
+  
+  #scores span {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  #game {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    display: flex; /* Add this line */
+    flex-direction: column; /* Add this line */
+    align-items: center; /* Add this line */
+  }
+  
+  #options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .option {
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to bottom right, #fff, #eee);
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .option:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .option:active {
+    transform: translateY(3px);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  #rock {
+    background: linear-gradient(to bottom right, #ff5f6d, #ffc371);
+  }
+  
+  #paper {
+    background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+  }
+  
+  #scissors {
+    background: linear-gradient(to bottom right, #43c6ac, #f8ffae);
+  }
+  
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+  #result {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease 5s forwards;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      left: -100%;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+
+
+  
+  #play-again {
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to bottom right, #fff, #e8bd13);
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: none;
+    margin-top: 20px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+
+
+    #play-again:hover {
+        transform: translateY(-5px);
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      #play-again:active {
+        transform: translateY(3px);
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+      }
+      
+      #farewell {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 10px;
+        width: 400px;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+      }
+      
+      #farewell:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      #farewell:before {
+        content: "";
+        display: table;
+      }
+      
+      @media screen and (max-width: 480px) {
+        #game, #scores, #farewell {
+          width: 90%;
+          padding: 10px;
+          font-size: 20px;
+        }
+      
+        .option {
+          padding: 10px 20px;
+          font-size: 18px;
+        }
+      }
+      
+
+/* Add this CSS at the end of your existing style.css file */
+
+/* Animate the result message */
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px) rotate(-10deg); }
+  40% { transform: translateX(10px) rotate(10deg); }
+  60% { transform: translateX(-10px) rotate(-10deg); }
+  80% { transform: translateX(10px) rotate(10deg); }
+  100% { transform: translateX(0); }
+}
+#computer-choice {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-size: 24px; /* Increase the font size */
+  opacity: 0; /* Set the initial opacity to 0 */
+  animation: fadeIn 0.5s ease 0.8s forwards; /* Add animation timing */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Animate the Play Again button */
+#play-again {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+
+/* Add this at the end of your existing style.css file */
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px) rotate(-10deg); }
+  40% { transform: translateX(10px) rotate(10deg); }
+  60% { transform: translateX(-10px) rotate(-10deg); }
+  80% { transform: translateX(10px) rotate(10deg); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 1s ease-in-out;
+}
+
+#result-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#result {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: fadeIn 1s ease 5s forwards;
+}
+
+#choices {
+  opacity: 0;
+  font-size: 3rem;
+  position: flex;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  animation: fade-in 3s ease forwards;
+}
+
